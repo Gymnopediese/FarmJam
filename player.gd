@@ -1,20 +1,12 @@
 extends KinematicBody2D
 
-
-var speed = 100
+var speed = 30
 var velocity = Vector2()
 var inventory = []
-
+var orientation = Vector2()
 
 func _ready():
 	pass # Replace with function body.
-
-<<<<<<< HEAD
-=======
-var speed = 30
-var velocity = Vector2()
-var orientation = Vector2()
->>>>>>> f2b8ef9ec315fffc46a623ea3d47226f0948827c
 
 func _max_accelerate(diagonalMove):
 	if abs(velocity.x) > speed+1:
