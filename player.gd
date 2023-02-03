@@ -49,7 +49,7 @@ func _move(delta):
 	
 	velocity /= 1.1
 	
-	self.move_and_collide(velocity * delta)
+	self.move_and_slide(velocity)
 	#position = position + velocity * delta
 
 func _add_item(newItem):
