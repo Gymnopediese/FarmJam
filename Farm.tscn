@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://map.gd" type="Script" id=3]
 [ext_resource path="res://crops/carrots.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Farm" type="Node2D"]
 script = ExtResource( 3 )
@@ -22,3 +24,11 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 4 )]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 33, -50 )
+scale = Vector2( 9.36254, 2.96331 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 3.09745, 33.746 )
+shape = SubResource( 1 )

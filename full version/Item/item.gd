@@ -6,7 +6,7 @@ class Item:
 	var sprite : Sprite
 	var count : int
 	
-	func _init(Name_, Sellprice_, Sprite_ = ""):
+	func _init(Name_, Sellprice_, Sprite_ = null):
 		name = Name_
 		sellPrice = Sellprice_
 		sprite = Sprite_
