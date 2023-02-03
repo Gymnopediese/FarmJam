@@ -10,26 +10,26 @@ extends KinematicBody2D
 func _ready():
 	pass # Replace with function body.
 
-var speed = 200
+var speed = 100
 var velocity = Vector2()
 
-func _max_accelerate():
+func _max_accelerate(diagonalMove):
 	if abs(velocity.x) > speed+1:
 		velocity.x = velocity.x/abs(velocity.x)*speed
 	if abs(velocity.y) > speed:
 		velocity.y = velocity.y/abs(velocity.y)*speed
 	
-func _stop_character():
-	if abs(velocity.x) < 10:
-		velocity.x = 0
-	if abs(velocity.y) < 10:
-		velocity.y = 0
+func _interact():
+	var ind = position / 16
+	print(ind)
+	if Farm.map[int(ind.x)][int(ind.y)].hasObject:
+		Farm.map[int(ind.x)][int(ind.y)].object.interact()
 
 func _move(delta):
-	
-	_stop_character()
-	
 	var diagonalMove = 0
+	if Input.is_action_just_pressed("Interact"):
+		_interact()
+		return
 	if Input.is_action_pressed("up"):
 		velocity += Vector2(0, -speed)
 		diagonalMove += 1
@@ -42,14 +42,11 @@ func _move(delta):
 	if Input.is_action_pressed("right"):
 		velocity += Vector2(speed, 0)
 		diagonalMove += 1
-	
-	_max_accelerate()
-	
+	_max_accelerate(diagonalMove)
 	if diagonalMove == 2:
 		velocity /= 1.4
 	
-	#natural decceleration
-	velocity /= 1.2
+	velocity /= 1.1
 	
 	position = position + velocity * delta
 
