@@ -9,6 +9,12 @@ var inventory = []
 func _ready():
 	pass # Replace with function body.
 
+<<<<<<< HEAD
+=======
+var speed = 30
+var velocity = Vector2()
+var orientation = Vector2()
+>>>>>>> f2b8ef9ec315fffc46a623ea3d47226f0948827c
 
 func _max_accelerate(diagonalMove):
 	if abs(velocity.x) > speed+1:
@@ -18,9 +24,11 @@ func _max_accelerate(diagonalMove):
 	
 func _interact():
 	var ind = position / 16
+	ind += orientation
 	print(ind)
-	if Farm.map[int(ind.x)][int(ind.y)].hasObject:
-		Farm.map[int(ind.x)][int(ind.y)].object.interact()
+	if ind > Vector2(0, 0) and Farm.map[int(ind.x)][int(ind.y)].hasObject:
+		print(Farm.map[int(ind.x)][int(ind.y)])
+		Farm.map[int(ind.x)][int(ind.y)].object.interact(self)
 
 func _move(delta):
 	var diagonalMove = 0
@@ -29,14 +37,18 @@ func _move(delta):
 		return
 	if Input.is_action_pressed("up"):
 		velocity += Vector2(0, -speed)
+		orientation = Vector2(0, -1)
 		diagonalMove += 1
 	if Input.is_action_pressed("down"):
 		velocity += Vector2(0, speed)
+		orientation = Vector2(0, 1)
 		diagonalMove += 1
 	if Input.is_action_pressed("left"):
+		orientation = Vector2(-1, 0)
 		velocity += Vector2(-speed, 0)
 		diagonalMove += 1
 	if Input.is_action_pressed("right"):
+		orientation = Vector2( 1, 0)
 		velocity += Vector2(speed, 0)
 		diagonalMove += 1
 	_max_accelerate(diagonalMove)

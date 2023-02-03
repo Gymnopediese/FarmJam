@@ -1,18 +1,15 @@
 extends Node2D
 
 
-class Tile:
-	var hasObject: bool
-	var object
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
-var map = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(100):
-		map.append([])
-		for j in range(100):
-			map[i].append(Tile.new())
-	
+	Farm.map[0][0].hasObject = true
+	Farm.map[0][0].object = $AnimatedSprite
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
