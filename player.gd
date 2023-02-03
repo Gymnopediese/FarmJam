@@ -1,17 +1,14 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var speed = 100
+var velocity = Vector2()
+var inventory = []
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-var speed = 100
-var velocity = Vector2()
 
 func _max_accelerate(diagonalMove):
 	if abs(velocity.x) > speed+1:
@@ -49,6 +46,14 @@ func _move(delta):
 	velocity /= 1.1
 	
 	position = position + velocity * delta
+
+func _add_item(newItem):
+	for item in inventory:
+		if item.name == newItem.name:
+			item.count += 1
+	for item in inventory:
+		if item.name == "":
+			item = newItem
 
 func _process(delta):
 	_move(delta)
