@@ -38,4 +38,3 @@ animations = [ {
 [node name="carots" type="AnimatedSprite"]
 frames = SubResource( 7 )
 script = ExtResource( 1 )
-price = null
