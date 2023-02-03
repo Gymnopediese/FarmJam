@@ -49,7 +49,8 @@ func _move(delta):
 	
 	velocity /= 1.1
 	
-	position = position + velocity * delta
+	self.move_and_collide(velocity * delta)
+	#position = position + velocity * delta
 
 func _add_item(newItem):
 	for item in inventory:
