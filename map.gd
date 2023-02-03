@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	Farm.map[0][0].hasObject = true
 	Farm.map[0][0].object = $AnimatedSprite
 

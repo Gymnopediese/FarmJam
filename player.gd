@@ -17,10 +17,8 @@ func _max_accelerate(diagonalMove):
 func _interact():
 	var ind = position / 16
 	ind += orientation
-	print(ind)
-	if ind > Vector2(0, 0) and Farm.map[int(ind.x)][int(ind.y)].hasObject:
-		print(Farm.map[int(ind.x)][int(ind.y)])
-		Farm.map[int(ind.x)][int(ind.y)].object.interact(self)
+	Farm.interact(ind)
+				
 
 func _move(delta):
 	var diagonalMove = 0
@@ -51,14 +49,6 @@ func _move(delta):
 	
 	self.move_and_collide(velocity * delta)
 	#position = position + velocity * delta
-
-func _add_item(newItem):
-	for item in inventory:
-		if item.name == newItem.name:
-			item.count += 1
-	for item in inventory:
-		if item.name == "":
-			item = newItem
 
 func _process(delta):
 	_move(delta)
