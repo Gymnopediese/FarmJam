@@ -17,7 +17,11 @@ func _ready():
 
 
 func _change_need():
-	var ran = rand_range(0, 2)
+	var ran = rand_range(0, 1)
+	if ran < 0.8:
+		ran = int(rand_range(0, Farm.max_seed))
+	else:
+		ran = int(rand_range(0, len(ListItem.PlantList)))
 	need = ListItem.PlantList[ran].name
 	amount = int(rand_range(1, 4))
 	$idea.texture = ListItem.PlantList[ran].sprite

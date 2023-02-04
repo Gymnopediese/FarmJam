@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -9,9 +9,6 @@
 [ext_resource path="res://items/0.png" type="Texture" id=7]
 [ext_resource path="res://station_seed.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Farmer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://animals/chicken.tscn" type="PackedScene" id=10]
-[ext_resource path="res://animals/cow.tscn" type="PackedScene" id=11]
-[ext_resource path="res://animals/turkey.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -66,14 +63,16 @@ shape = SubResource( 1 )
 
 [node name="farmer" parent="." instance=ExtResource( 9 )]
 
-[node name="animal" parent="." instance=ExtResource( 10 )]
-
-[node name="cow" parent="." instance=ExtResource( 11 )]
-
-[node name="dindon" parent="." instance=ExtResource( 12 )]
-
 [node name="trees" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 65589, 0, 1441792, 196652, 0, 1441792, 262181, 0, 1441792, 262203, 0, 1441792, 327723, 0, 1703943, 393267, 0, 1441792, 458786, 0, 1441792, 458800, 0, 1703943, 524326, 0, 1703943, 524329, 0, 1441792, 589876, 0, 1703943, 655416, 0, 1441792, 655417, 0, 1703943, 720933, 0, 1441792, 786480, 0, 1703943, 786484, 0, 1703943, 852001, 0, 1441792, 852018, 0, 1441792, 917554, 0, 1703943, 917565, 0, 1441792, 983076, 0, 1441792, 1048610, 0, 1703943, 1048634, 0, 1703943, 1114143, 0, 1441792, 1179685, 0, 1703943, 1310754, 0, 1703943, 1376292, 0, 1441792, 1376316, 0, 1441792, 1441840, 0, 1441792, 1507369, 0, 1441792, 1572919, 0, 1441792 )
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 917561, 1, 983040, 917562, 1, 983041, 917563, 1, 983042, 983097, 1, 1048576, 983098, 1, 1114124, 983099, 1, 1048578, 1048633, 1, 1048576, 1048634, 1, 1114124, 1048635, 1, 1048578, 1114169, 1, 1048576, 1114170, 1, 1114124, 1114171, 1, 1048578, 1179705, 1, 1048576, 1179706, 1, 1114124, 1179707, 1, 1048578, 1245241, 1, 1048576, 1245242, 1, 1114124, 1245243, 1, 1048578, 1310777, 1, 1048576, 1310778, 1, 1114124, 1310779, 1, 1048578, 1376313, 1, 1048576, 1376314, 1, 1114124, 1376315, 1, 1048578, 1441849, 1, 1114112, 1441850, 1, 1114113, 1441851, 1, 1114114 )

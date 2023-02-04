@@ -7,7 +7,7 @@ export var pos = Vector2()
 
 var counter = 0
 var bertreat = true
-var dest
+var dest = Vector2()
 
 func _ready():
 	play("idle")

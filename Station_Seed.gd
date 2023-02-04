@@ -14,7 +14,7 @@ func set_pos(pos):
 	position = pos
 
 func interact(item):
-	if item.type == ListItem.PLANT and itemProcessed == null:
+	if item != null and item.type == ListItem.PLANT and itemProcessed == null:
 		itemProcessed = item
 		$Timer.set_wait_time(item.processTime)
 		$Timer.start()

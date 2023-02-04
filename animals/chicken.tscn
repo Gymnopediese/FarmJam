@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://full version/animals/chicken animation.png" type="Texture" id=1]
 [ext_resource path="res://animals/chicken.gd" type="Script" id=2]
@@ -112,6 +112,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 6.5, 6 )
+
 [node name="poule" type="AnimatedSprite"]
 frames = SubResource( 21 )
 animation = "down"
@@ -122,5 +125,11 @@ odds = 0.85
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.5, 2 )
+shape = SubResource( 22 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

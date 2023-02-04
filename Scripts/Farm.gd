@@ -8,6 +8,9 @@ class Tile:
 var map = []
 var map_object
 var money = 0
+var max_seed = 0
+
+
 var crops_path = "res://crops/"
 var crops = [
 	"carrots",
@@ -42,14 +45,12 @@ func interact(vect, obj):
 	var x = int(vect.x)
 	var y = int(vect.y)
 	print(x, " ", y)
-	if (obj == null):
-		return
 	if vect > Vector2(0, 0) and map[x][y].hasObject:
 		var item = map[x][y].object.interact(obj)
 		if item != null and item[0] != null:
 			if Inventory.add_item(item[0]) and item[1]:
 				clear(vect)
-	elif obj.type == ListItem.SEED:
+	elif obj != null and obj.type == ListItem.SEED:
 		plante(ListItem.PlantList[obj.id].name, obj.name, vect)
 
 # Called when the node enters the scene tree for the first time.
