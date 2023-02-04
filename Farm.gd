@@ -9,6 +9,13 @@ var map = []
 var map_object
 var money = 0
 
+var crops_path = "res://crops/"
+
+var crops = [
+	"carrots",
+	"pasteque"
+]
+
 func plante(crop, vect):
 	print("planting " + crop)
 	var x = int(vect.x)
