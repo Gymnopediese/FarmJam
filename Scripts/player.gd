@@ -22,6 +22,10 @@ func _interact():
 func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
 		_interact()
+	if Input.is_action_just_pressed("next"):
+		Inventory.rot()
+	if Input.is_action_just_pressed("previous"):
+		Inventory.rrot()
 	_move(delta)
 
 

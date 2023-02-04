@@ -13,7 +13,7 @@ enum {
 func PlantToSeed(item):
 	var returnItem = item
 	
-	returnItem.name += " Seed"
+	returnItem.name += "Seed"
 	returnItem.sellPrice *= SeedSaleModifier
 	returnItem.processTime *= SeedProcessModifier
 	returnItem.type = SEED
@@ -22,8 +22,8 @@ func PlantToSeed(item):
 
 
 var PlantList = [
-	Item.new("Carrot", 0, PLANT, 100, 15), 
-	Item.new("Watermelon", 1, PLANT, 115, 35)
+	Item.new("Carrot", 0, PLANT, 100, 1), 
+	Item.new("Watermelon", 1, PLANT, 115, 1)
 	]
 
 var SeedList = [

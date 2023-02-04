@@ -5,6 +5,18 @@ var inventory = []
 
 var MAXSIZE = 20
 
+func rot():
+	if len(inventory) < 2:
+		return
+	inventory.push_back(inventory[0])
+	inventory.pop_front()
+
+func rrot():
+	if len(inventory) < 2:
+		return
+	inventory.push_front(inventory[-1])
+	inventory.pop_back()		
+
 func sell_item(toSell, ammount):
 	for item in inventory:
 		if item.name == toSell and item.count >= ammount:
@@ -14,10 +26,14 @@ func sell_item(toSell, ammount):
 			return
 
 func remove_item(toRemove, ammount):
+	print(ammount)
 	for item in inventory:
 		if item.name == toRemove and item.count >= ammount:
+			print(item.count)
 			item.count -= ammount
+			print(item.count)
 			if (item.count == 0):
+				print("aniliated")
 				inventory.erase(item)
 			return
 

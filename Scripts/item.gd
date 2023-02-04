@@ -7,7 +7,7 @@ class Item:
 	var count : int
 	var id : int
 	var type : int
-	var sprite : Sprite
+	var sprite : Texture
 	
 	func _init(Name_ = "", Id_ = 0, Type_ = 0, SellPrice_ = 0, ProcessTime_ = 0, Count_ = 1, Sprite_ = null):
 		name = Name_

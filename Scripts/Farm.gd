@@ -14,12 +14,13 @@ var crops = [
 	"pasteque"
 ]
 
-func plante(crop, vect):
+func plante(crop, seeds, vect):
 	print("planting " + crop)
 	var x = int(vect.x)
 	var y = int(vect.y)
 	var plante = load(crops_path + crop + ".tscn").instance()
 	plante.set_pos(Vector2(x * 16 + 8, y * 16 + 8))
+	Inventory.remove_item(seeds, 1)
 	map[x][y].hasObject = true
 	map[x][y].object = plante
 	map_object.add_child(plante)
@@ -48,8 +49,8 @@ func interact(vect, obj):
 		if item != null and item[0] != null:
 			if Inventory.add_item(item[0]) and item[1]:
 				clear(vect)
-	else:
-		plante(crops[rand_range(0, 2)], vect)
+	elif obj.type == ListItem.SEED:
+		plante(ListItem.PlantList[obj.id].name, obj.name, vect)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

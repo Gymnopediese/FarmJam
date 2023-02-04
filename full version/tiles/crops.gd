@@ -12,7 +12,6 @@ var wet = false
 
 var current_frame = 0
 func interact(object):
-	
 	if not wet:
 		_wet()
 	if current_frame > 5:

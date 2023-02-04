@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/map.gd" type="Script" id=3]
-[ext_resource path="res://crops/carrots.tscn" type="PackedScene" id=4]
+[ext_resource path="res://crops/Carrot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Client.tscn" type="PackedScene" id=5]
 [ext_resource path="res://debug.gd" type="Script" id=6]
+[ext_resource path="res://items/0.png" type="Texture" id=7]
 [ext_resource path="res://station_seed.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -39,6 +40,11 @@ margin_top = -90.0
 margin_right = 52.0
 margin_bottom = 16.0
 script = ExtResource( 6 )
+
+[node name="item" type="Sprite" parent="KinematicBody2D/RichTextLabel"]
+position = Vector2( 37, 33 )
+z_index = 2
+texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 4 )]
 _price = 0
