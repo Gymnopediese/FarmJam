@@ -72,8 +72,11 @@ animations = [ {
 wait_time = 3.0
 autostart = true
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 _price = 10
-_name = "carrots"
+_name = "F"
 
 [node name="dry" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )

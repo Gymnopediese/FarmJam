@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://StationTimer.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Farm" type="Node2D"]
 script = ExtResource( 3 )
@@ -53,6 +55,7 @@ scale = Vector2( 9.36254, 2.96331 )
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationSeed"]
+shape = SubResource( 2 )
 
 [node name="StationTimer" type="Timer" parent="."]
 script = ExtResource( 7 )
