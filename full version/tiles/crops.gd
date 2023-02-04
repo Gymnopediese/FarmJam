@@ -3,6 +3,7 @@ extends Timer
 export var _price = 0
 export var _sprite: Texture
 export var _name = ""
+export var _id = 0
 
 var wet = false
 # Declare member variables here. Examples:
@@ -14,7 +15,8 @@ func interact(object):
 	if not wet:
 		_wet()
 	if current_frame > 5:
-		return Item.Item.new(_name, _price, 1, _sprite)
+		return Item.Item.new(Farm.crops[_id], _price, 1, _sprite)
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

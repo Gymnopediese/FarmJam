@@ -13,10 +13,11 @@ func _ready():
 
 func _interact():
 	var ind = position / 16
-	ind += _orientation/8
+	ind += _orientation
 	var obj = null
 	if len(Inventory.inventory) > 0:
 		obj = Inventory.inventory[0]
+<<<<<<< HEAD
 	var ooo
 	ooo = ListItem.CreateItem(ListItem.Plant, 1, 20)
 	ooo.count += 20
@@ -29,6 +30,9 @@ func _interact():
 	print(ooo.name)
 	print(ooo.count)
 
+=======
+	Farm.interact(ind, obj)
+>>>>>>> 4ac23ff8867f626e1a2248ec2aab9426453e23b4
 
 func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
