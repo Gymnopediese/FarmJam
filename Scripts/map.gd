@@ -14,8 +14,16 @@ func get_some_seeds():
 	for i in range(len(ListItem.SeedList)):
 		Inventory.add_item(ListItem.CreateItem(1, i, 100))
 
-func _ready():
+func init_trees():
+	var arr = $trees.get_used_cells()
+	for i in arr:
+		var new_tree = load("res://tree/tree.tscn").instance()
+		add_child(new_tree)
+		print(new_tree)
+		Farm.set_obj_pos(new_tree, i.x, i.y)
 
+func _ready():
+	init_trees()
 	get_some_seeds()
 	Farm.map_object = self
 	Farm.set_obj_pos($Client, 46, 18)
