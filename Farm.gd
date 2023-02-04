@@ -42,7 +42,6 @@ func clear(vect):
 func interact(vect, obj):
 	var x = int(vect.x)
 	var y = int(vect.y)
-	print(x, " ", y)
 	if vect > Vector2(0, 0) and map[x][y].hasObject:
 		print("has objedct")
 		var item = map[x][y].object.interact(obj)

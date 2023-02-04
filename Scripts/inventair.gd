@@ -4,7 +4,6 @@ extends Node
 var inventory = []
 
 var MAXSIZE = 20
-var MAXSTACK = 64
 
 func sell_item(toSell, ammount):
 	for item in inventory:
@@ -14,11 +13,20 @@ func sell_item(toSell, ammount):
 				inventory.erase(item)
 			return
 
+func remove_item(toRemove, ammount):
+	for item in inventory:
+		if item.name == toRemove and item.count >= ammount:
+			item.count -= ammount
+			if (item.count == 0):
+				inventory.erase(item)
+			return
+
 func add_item(newItem):
 	for item in inventory:
-		if item.name == newItem.name and item.count + newItem.count < MAXSTACK:
+		if item.name == newItem.name:
 			item.count += newItem.count
 			return true
+	print("not in motherfucker")
 	if (len(inventory) < MAXSIZE):
 		inventory.append(newItem)
 		return true

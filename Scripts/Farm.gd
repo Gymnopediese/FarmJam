@@ -27,7 +27,7 @@ func plante(crop, vect):
 func set_obj_pos(obj, x: int, y: int):
 	map[x][y].hasObject = true
 	map[x][y].object = obj
-	obj.set_pos(Vector2(x * 16, y * 16))
+	obj.set_pos(Vector2(x * 16 + 8, y * 16 + 8))
 
 func clear(vect):
 	var x = int(vect.x)
@@ -41,11 +41,12 @@ func interact(vect, obj):
 	var x = int(vect.x)
 	var y = int(vect.y)
 	print(x, " ", y)
+	if (obj == null):
+		return
 	if vect > Vector2(0, 0) and map[x][y].hasObject:
-		print("has objedct")
 		var item = map[x][y].object.interact(obj)
-		if item != null:
-			if Inventory.add_item(item):
+		if item != null and item[0] != null:
+			if Inventory.add_item(item[0]) and item[1]:
 				clear(vect)
 	else:
 		plante(crops[rand_range(0, 2)], vect)

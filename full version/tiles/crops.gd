@@ -12,10 +12,14 @@ var wet = false
 
 var current_frame = 0
 func interact(object):
+	
 	if not wet:
 		_wet()
 	if current_frame > 5:
-		return Item.Item.new(Farm.crops[_id], _price, 1, _sprite)
+		print(Inventory.inventory)
+		var res = ListItem.CreateItem(ListItem.PLANT, _id, 1)
+		print(Inventory.inventory)
+		return [res, true]
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():

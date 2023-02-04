@@ -1,16 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/map.gd" type="Script" id=3]
 [ext_resource path="res://crops/carrots.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Client.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Station_Seed.gd" type="Script" id=6]
-[ext_resource path="res://StationTimer.gd" type="Script" id=7]
+[ext_resource path="res://debug.gd" type="Script" id=6]
+[ext_resource path="res://station_seed.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Farm" type="Node2D"]
 script = ExtResource( 3 )
@@ -35,6 +33,13 @@ scale = Vector2( 3.2919, 2.72632 )
 current = true
 zoom = Vector2( 0.35, 0.35 )
 
+[node name="RichTextLabel" type="RichTextLabel" parent="KinematicBody2D"]
+margin_left = -112.0
+margin_top = -90.0
+margin_right = 52.0
+margin_bottom = 16.0
+script = ExtResource( 6 )
+
 [node name="AnimatedSprite" parent="." instance=ExtResource( 4 )]
 _price = 0
 _name = ""
@@ -49,13 +54,4 @@ shape = SubResource( 1 )
 
 [node name="Client" parent="." instance=ExtResource( 5 )]
 
-[node name="StationSeed" type="StaticBody2D" parent="."]
-position = Vector2( -105, 111 )
-scale = Vector2( 9.36254, 2.96331 )
-script = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StationSeed"]
-shape = SubResource( 2 )
-
-[node name="StationTimer" type="Timer" parent="."]
-script = ExtResource( 7 )
+[node name="station" parent="." instance=ExtResource( 8 )]
