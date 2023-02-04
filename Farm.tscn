@@ -40,8 +40,8 @@ zoom = Vector2( 0.35, 0.35 )
 [node name="RichTextLabel" type="RichTextLabel" parent="KinematicBody2D"]
 margin_left = -172.0
 margin_top = -98.0
-margin_right = 332.0
-margin_bottom = 179.0
+margin_right = 173.0
+margin_bottom = 99.0
 script = ExtResource( 6 )
 
 [node name="item" type="Sprite" parent="KinematicBody2D/RichTextLabel"]
@@ -50,8 +50,6 @@ z_index = 2
 texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 4 )]
-_price = 0
-_name = ""
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -105, 111 )

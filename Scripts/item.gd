@@ -18,7 +18,7 @@ class Item:
 		id = Id_
 	
 	func _to_string():
-		return "name " + name + "\n" + "count " + str(count) + "\n" + "sell " + str(sellPrice)
+		return "name " + name + "\n" + "count " + str(count) + "\n" + "sell " + str(sellPrice) + "\n"
 	
 	
 	func sell(sellNumber):

@@ -22,14 +22,19 @@ func PlantToSeed(item):
 
 
 var PlantList = [
-	Item.new("Carrot", 0, PLANT, 100, 1), 
-	Item.new("Watermelon", 1, PLANT, 115, 1)
+	Item.new("Carrot", 0, PLANT, 8, 1), 
+	Item.new("Tomato", 1, PLANT, 12, 1),
+	Item.new("Strawberry", 2, PLANT, 18, 1),
+	Item.new("Pumpkin", 3, PLANT, 36, 1),
+	Item.new("Corn", 4, PLANT, 24, 1),
+	Item.new("Potato", 5, PLANT, 8, 1),
+	Item.new("Watermelon", 6, PLANT, 56, 1),
+	Item.new("Radish", 7, PLANT, 14, 1),
+	Item.new("Letuce", 8, PLANT, 28, 1),
+	Item.new("Hay", 9, PLANT, 4, 1),
 	]
 
-var SeedList = [
-	PlantToSeed(dict2inst(inst2dict(PlantList[0]))),
-	PlantToSeed(dict2inst(inst2dict(PlantList[1])))
-]
+var SeedList = []
 
 var AnimalProccessedList = [
 	Item.new("Pullover", 100, 0),
@@ -41,9 +46,11 @@ var AnimalHarvestedList = [
 ]
 
 func _ready():
-	for i in range(2):
+	for i in range(len(PlantList)):
+		SeedList.append(PlantToSeed(dict2inst(inst2dict(PlantList[i]))))
 		PlantList[i].sprite = load("res://items/%s.png" % str(i))
 		SeedList[i].sprite = load("res://seeds/%s.png" % str(i))
+	for i in range(2):
 		AnimalHarvestedList[i].sprite = load("res://animals_item/%s.png" % str(i))
 
 func CreateItem(ItemType, ItemId, Count = 0):

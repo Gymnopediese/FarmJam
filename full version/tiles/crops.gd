@@ -1,8 +1,5 @@
 extends Timer
 
-export var _price = 0
-export var _sprite: Texture
-export var _name = ""
 export var _id = 0
 
 var wet = false
