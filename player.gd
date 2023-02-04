@@ -24,7 +24,11 @@ func _interact():
 				
 
 func _move(delta):
+	velocity.x = 0
+	velocity.y = 0
+	
 	var diagonalMove = 0
+	
 	if Input.is_action_just_pressed("Interact"):
 		_interact()
 		return
@@ -48,9 +52,8 @@ func _move(delta):
 	if diagonalMove == 2:
 		velocity /= 1.4
 	
-	velocity /= 1.1
 	
-	self.move_and_collide(velocity * delta)
+	self.move_and_slide(velocity)
 	#position = position + velocity * delta
 
 func _process(delta):
