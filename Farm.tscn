@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://debug.gd" type="Script" id=6]
 [ext_resource path="res://items/0.png" type="Texture" id=7]
 [ext_resource path="res://station_seed.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Farmer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://animals/chicken.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,14 +37,14 @@ current = true
 zoom = Vector2( 0.35, 0.35 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="KinematicBody2D"]
-margin_left = -112.0
-margin_top = -90.0
-margin_right = 52.0
-margin_bottom = 16.0
+margin_left = -172.0
+margin_top = -98.0
+margin_right = 332.0
+margin_bottom = 179.0
 script = ExtResource( 6 )
 
 [node name="item" type="Sprite" parent="KinematicBody2D/RichTextLabel"]
-position = Vector2( 37, 33 )
+position = Vector2( 321, 175 )
 z_index = 2
 texture = ExtResource( 7 )
 
@@ -61,3 +63,7 @@ shape = SubResource( 1 )
 [node name="Client" parent="." instance=ExtResource( 5 )]
 
 [node name="station" parent="." instance=ExtResource( 8 )]
+
+[node name="farmer" parent="." instance=ExtResource( 9 )]
+
+[node name="animal" parent="." instance=ExtResource( 10 )]

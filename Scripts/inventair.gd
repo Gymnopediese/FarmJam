@@ -17,25 +17,30 @@ func rrot():
 	inventory.push_front(inventory[-1])
 	inventory.pop_back()		
 
+func has_item(item, amount):
+	for item in inventory:
+		if item.name == item.name:
+			return item.count >= amount
+	return false
+
 func sell_item(toSell, ammount):
 	for item in inventory:
 		if item.name == toSell and item.count >= ammount:
 			item.sell(ammount)
 			if (item.count == 0):
 				inventory.erase(item)
-			return
+			return true
+	return false
+
 
 func remove_item(toRemove, ammount):
-	print(ammount)
 	for item in inventory:
 		if item.name == toRemove and item.count >= ammount:
-			print(item.count)
 			item.count -= ammount
-			print(item.count)
 			if (item.count == 0):
-				print("aniliated")
 				inventory.erase(item)
-			return
+			return true
+	return false
 
 func add_item(newItem):
 	for item in inventory:
