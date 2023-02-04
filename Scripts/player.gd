@@ -18,10 +18,16 @@ func _interact():
 	if len(Inventory.inventory) > 0:
 		obj = Inventory.inventory[0]
 	var ooo
-	ooo = ListItem.CreateItem(101)
+	ooo = ListItem.CreateItem(ListItem.Plant, 1, 20)
+	ooo.count += 20
 	print(ooo.name)
-	ooo = ListItem.CreateItem(101, 1)
+	print(ooo.count)
+	ooo = ListItem.CreateItem(ListItem.Plant, 1, 20)
+	print(ooo.count)
+	ooo = ListItem.CreateItem(ListItem.Seed, 1, 20)
+	ooo.count += 20
 	print(ooo.name)
+	print(ooo.count)
 
 
 func _process(delta):
