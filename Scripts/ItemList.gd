@@ -36,13 +36,15 @@ var AnimalProccessedList = [
 ]
 
 var AnimalHarvestedList = [
-	Item.new("Wool", 100, 35),
+	Item.new("Egg", 0, ANIMALHARVEST, 100, 1), 
+	Item.new("Milk", 1, ANIMALHARVEST, 200, 1), 
 ]
 
 func _ready():
 	for i in range(2):
 		PlantList[i].sprite = load("res://items/%s.png" % str(i))
 		SeedList[i].sprite = load("res://seeds/%s.png" % str(i))
+		AnimalHarvestedList[i].sprite = load("res://animals_item/%s.png" % str(i))
 
 func CreateItem(ItemType, ItemId, Count = 0):
 	

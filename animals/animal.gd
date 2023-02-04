@@ -2,6 +2,7 @@ extends AnimatedSprite
 
 
 export var id = 0
+export var wait_tick = 10
 export var pos = Vector2()
 
 var counter = 0
@@ -12,6 +13,7 @@ func _ready():
 	play("idle")
 
 var stop = true
+
 func _process(delta):
 	position = position.move_toward(dest, delta * 20)
 	if (position == dest and not stop):
@@ -22,7 +24,10 @@ func _process(delta):
 			play("idle")
 
 func interact(object):
-	print("meuuuu")
+	if (bertreat):
+		bertreat = false
+		counter = 0
+		Inventory.add_item(ListItem.CreateItem(ListItem.ANIMALHARVEST, id, 1))
 
 func set_pos(pos):
 	self.pos = pos

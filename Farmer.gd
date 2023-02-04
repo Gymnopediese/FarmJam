@@ -18,7 +18,7 @@ func interact(object):
 	print(res)
 	Inventory.add_item(res)
 	_change_need()
-		
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_change_need()

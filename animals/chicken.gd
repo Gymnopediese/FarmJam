@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func interact(object):
-	print("chicken")
+	pass
 	
 func lay_egg(npos):
 	var new_egg = load("res://random_interactibles/egg.tscn").instance()

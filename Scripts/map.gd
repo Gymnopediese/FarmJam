@@ -18,6 +18,7 @@ func _ready():
 	Farm.set_obj_pos($AnimatedSprite, 46, 19)
 	Farm.set_obj_pos($station, 46, 20)
 	Farm.set_obj_pos($animal, 40, 20)
+	Farm.set_obj_pos($cow, 42, 20)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
