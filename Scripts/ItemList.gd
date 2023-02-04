@@ -43,6 +43,7 @@ var AnimalProccessedList = [
 var AnimalHarvestedList = [
 	Item.new("Egg", 0, ANIMALHARVEST, 100, 1), 
 	Item.new("Milk", 1, ANIMALHARVEST, 200, 1), 
+	Item.new("TurkeyEgg", 2, ANIMALHARVEST, 300, 1), 
 ]
 
 func _ready():

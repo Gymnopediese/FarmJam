@@ -4,7 +4,9 @@ extends "res://animals/animal.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+export var eggsprite: Texture
+export var eggid: int
+export var odds: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,8 @@ func interact(object):
 	
 func lay_egg(npos):
 	var new_egg = load("res://random_interactibles/egg.tscn").instance()
+	new_egg.texture = eggsprite
+	new_egg.id = eggid
 	Farm.map_object.add_child(new_egg)
 	Farm.set_obj_pos(new_egg, int(npos.x), int(npos.y))
 	print(npos.x, " ", npos.y)
@@ -35,5 +39,5 @@ func behave():
 		stop()
 		stop = false
 		play(animations[ran])
-		if rand_range(0, 1) > 0.8:
+		if rand_range(0, 1) > odds:
 			lay_egg(npos)

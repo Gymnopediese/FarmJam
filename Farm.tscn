@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://full version/tiles/PineTools.com_files 4/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Farmer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://animals/chicken.tscn" type="PackedScene" id=10]
 [ext_resource path="res://animals/cow.tscn" type="PackedScene" id=11]
+[ext_resource path="res://animals/turkey.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -68,3 +69,5 @@ shape = SubResource( 1 )
 [node name="animal" parent="." instance=ExtResource( 10 )]
 
 [node name="cow" parent="." instance=ExtResource( 11 )]
+
+[node name="dindon" parent="." instance=ExtResource( 12 )]
