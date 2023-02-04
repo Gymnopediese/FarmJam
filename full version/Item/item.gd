@@ -6,15 +6,16 @@ class Item:
 	var sprite : Sprite
 	var count : int
 	
-	func _init(Name_, Sellprice_, Sprite_ = null):
+	func _init(Name_, Sellprice_, count, Sprite_ = null):
 		name = Name_
 		sellPrice = Sellprice_
 		sprite = Sprite_
+		self.count = count
+	func _to_string():
+		return "name " + name + "\n" + "count " + str(count) + "\n" + "sell " + str(sellPrice)
 	
-	func _sell(sellNumber):
-		if count < sellNumber:
-			print("Error sell number too high")
-		else:
+	func sell(sellNumber):
+		if count >= sellNumber:
 			count -= sellNumber
-			return count * sellNumber
-
+			Farm.money += sellNumber * sellPrice
+			

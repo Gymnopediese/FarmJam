@@ -72,8 +72,8 @@ animations = [ {
 wait_time = 3.0
 autostart = true
 script = ExtResource( 1 )
-_price = 10
-_name = "carrots"
+_price = 30
+_name = "pasteque"
 
 [node name="dry" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )

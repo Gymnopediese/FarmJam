@@ -6,6 +6,14 @@ var inventory = []
 var MAXSIZE = 20
 var MAXSTACK = 64
 
+func sell_item(toSell, ammount):
+	for item in inventory:
+		if item.name == toSell and item.count >= ammount:
+			item.sell(ammount)
+			if (item.count == 0):
+				inventory.erase(item)
+			return
+
 func add_item(newItem):
 	for item in inventory:
 		if item.name == newItem.name and item.count + newItem.count < MAXSTACK:

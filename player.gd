@@ -17,7 +17,10 @@ func _max_accelerate(diagonalMove):
 func _interact():
 	var ind = position / 16
 	ind += orientation
-	Farm.interact(ind)
+	var obj = null
+	if len(Inventory.inventory) > 0:
+		obj = Inventory.inventory[0]
+	Farm.interact(ind, obj)
 				
 
 func _move(delta):
